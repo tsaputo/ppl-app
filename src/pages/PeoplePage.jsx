@@ -41,25 +41,26 @@ class PeoplePage extends React.Component {
       })
     });
 
-    const colorObj = {};
+    const bornThisMonth = {};
     arr.forEach((element) => {
-      if (colorObj[element] === undefined) {
-        colorObj[element] = 1
+      if (bornThisMonth[element] === undefined) {
+        bornThisMonth[element] = 1
       } else {
-        colorObj[element] +=1
+        bornThisMonth[element] +=1
       }
     });
 
-    function chooseColor(monthOfBirth) {
-      if (monthOfBirth < 3) {
+    console.log(bornThisMonth);
+
+    function chooseColor(peopleBornThisMonth) {
+      if (peopleBornThisMonth < 3) {
         return 'grey'
-      } else if (monthOfBirth < 7) {
+      } else if (peopleBornThisMonth < 7) {
         return 'blue'
-      } else if (monthOfBirth < 11) {
+      } else if (peopleBornThisMonth < 11) {
         return 'green'
       } else return 'red'
     }
-
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -81,7 +82,7 @@ class PeoplePage extends React.Component {
                 <tr key={item.id}>
                   {Object.keys(data[0]).map((columnTitle) => {
                     if (columnTitle === 'dob') {
-                      return <td style={{color:chooseColor(item[columnTitle].split("-")[1])}} key={item[columnTitle] + columnTitle }>{item[columnTitle].split("T")[0]}</td>
+                      return <td style={{color:chooseColor(bornThisMonth[item[columnTitle].split("-")[1]])}} key={item[columnTitle] + columnTitle }>{item[columnTitle].split("T")[0]}</td>
                     } else {
                       return <td key={item[columnTitle] + columnTitle}>{item[columnTitle]}</td>
                     }
