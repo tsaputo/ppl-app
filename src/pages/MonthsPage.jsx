@@ -69,7 +69,9 @@ class MonthsPage extends React.Component {
         return 'primary'
       } else if (peopleBornThisMonth < 11) {
         return 'success'
-      } else return 'danger'
+      } else if(peopleBornThisMonth >= 11) {
+        return 'danger'
+      } else return 'light'
     }
 
     function showBornThisMonth(month) {
@@ -101,7 +103,7 @@ class MonthsPage extends React.Component {
         <div className="collapse show" id="collapseExample">
           <div className="card card-body">
             <div>
-              click the button, please
+              To see the list of people, born this month - click the button, please
             </div>
 
           </div>
