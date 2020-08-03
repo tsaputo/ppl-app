@@ -1,8 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import MonthsPage from '../pages/MonthsPage';
-// import PeoplePage from '../pages/PeoplePage'
-
 
 const NavBar = () => (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

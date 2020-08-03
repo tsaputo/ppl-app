@@ -50,8 +50,6 @@ class PeoplePage extends React.Component {
       }
     });
 
-    console.log(bornThisMonth);
-
     function chooseColor(peopleBornThisMonth) {
       if (peopleBornThisMonth < 3) {
         return 'grey'
