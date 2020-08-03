@@ -101,7 +101,7 @@ class MonthsPage extends React.Component {
         <div className="collapse show" id="collapseExample">
           <div className="card card-body">
             <div>
-              { fullNameWithMonth['01'] }
+              click the button, please
             </div>
 
           </div>
