@@ -26,7 +26,7 @@ class MonthsPage extends React.Component {
             error
           });
         }
-      )
+    )
   }
 
   render() {

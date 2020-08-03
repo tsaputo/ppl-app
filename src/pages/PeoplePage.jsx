@@ -50,7 +50,15 @@ class PeoplePage extends React.Component {
       }
     });
 
-    console.log(colorObj);
+    function chooseColor(monthOfBirth) {
+      if (monthOfBirth < 3) {
+        return 'grey'
+      } else if (monthOfBirth < 7) {
+        return 'blue'
+      } else if (monthOfBirth < 11) {
+        return 'green'
+      } else return 'red'
+    }
 
 
     if (error) {
@@ -73,7 +81,7 @@ class PeoplePage extends React.Component {
                 <tr key={item.id}>
                   {Object.keys(data[0]).map((columnTitle) => {
                     if (columnTitle === 'dob') {
-                      return <td key={item[columnTitle] + columnTitle}>{item[columnTitle].split("T")[0]}</td>
+                      return <td style={{color:chooseColor(item[columnTitle].split("-")[1])}} key={item[columnTitle] + columnTitle }>{item[columnTitle].split("T")[0]}</td>
                     } else {
                       return <td key={item[columnTitle] + columnTitle}>{item[columnTitle]}</td>
                     }
